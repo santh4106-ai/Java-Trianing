@@ -1,14 +1,13 @@
-package day03;
-
 import java.util.Scanner;
 
-public class calculator {
+public class Main {
     public static void main(String[] args) {
         Scanner j = new Scanner(System.in);
-// Using a Char to get input
+
         int b = j.nextInt();
-        int c = j.nextInt();
         char a = j.next().charAt(0);
+        int c = j.nextInt();
+
         switch (a) {
             case '+':
                 System.out.println(b + c);
@@ -23,47 +22,23 @@ public class calculator {
                 break;
 
             case '/':
-                System.out.println(b / c);
+                if (c != 0)
+                    System.out.println(b / c);
+                else
+                    System.out.println("Division by zero not allowed");
                 break;
 
             case '%':
-                System.out.println(b % c);
+                if (c != 0)
+                    System.out.println(b % c);
+                else
+                    System.out.println("Division by zero not allowed");
                 break;
 
             default:
                 System.out.println("Invalid input");
-                break;
-//
-            // Using a to get input in String type
-
-//            int i = j.nextInt();
-//            int h = j.nextInt();
-//            String l = j.next();
-//            switch (l) {
-//                case "+":
-//                    System.out.println(i + h);
-//                    break;
-//
-//                case "-":
-//                    System.out.println(i - h);
-//                    break;
-//
-//                case "*":
-//                    System.out.println(i * h);
-//                    break;
-//
-//                case "/":
-//                    System.out.println(i / h);
-//                    break;
-//
-//                case "%":
-//                    System.out.println(i % h);
-//                    break;
-//
-//                default:
-//                    System.out.println("Invalid input");
-//                    break;
-//            }
         }
+
+        j.close();
     }
 }
